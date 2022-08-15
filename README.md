@@ -1,10 +1,13 @@
 # Deployment
 
+
 - A monolithic architecture is a traditional model of a software program, which is built as a unified unit that is self-contained and independent from other applications. 
 - A monolithic architecture is a singular, large computing network with one code base that couples all of the business concerns together.
 
-![image](https://user-images.githubusercontent.com/104793540/184662301-6b35e0b3-bdd6-4bf9-a501-b956b4c4a22b.png)
+<div align="center">
 
+![image](https://user-images.githubusercontent.com/104793540/184662301-6b35e0b3-bdd6-4bf9-a501-b956b4c4a22b.png)
+  </div>
 
 ### Shell Provisioner
 Provisioner name: `"shell"`
@@ -80,4 +83,15 @@ end
 
 ```
 
-- vagrant up 
+- vagrant up/ vagrant provision
+<div align="center">
+
+![image](https://user-images.githubusercontent.com/104793540/184724237-c05b5345-97bb-4682-97f6-f29dcda3afeb.png)
+
+![image](https://user-images.githubusercontent.com/104793540/184724374-8be65faa-1de0-489c-b2be-0685519a381f.png)
+
+![image](https://user-images.githubusercontent.com/104793540/184724413-32912e77-23b8-463d-9699-d6076d5a1c53.png)
+
+  </div>
+
+- taking npm out of script 
