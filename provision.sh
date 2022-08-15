@@ -14,6 +14,7 @@
 
  # setting up npm (inside app folder where you have app.js)
  cd app
+ cd app 
  sudo npm install pm2 -y
  npm install express -y 
  npm start -y 
