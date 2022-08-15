@@ -1,5 +1,8 @@
+<div align="center">
+  
 # Deployment
-
+  
+  </div>
 
 - A monolithic architecture is a traditional model of a software program, which is built as a unified unit that is self-contained and independent from other applications. 
 - A monolithic architecture is a singular, large computing network with one code base that couples all of the business concerns together.
