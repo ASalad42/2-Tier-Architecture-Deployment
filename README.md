@@ -12,6 +12,8 @@
 ![image](https://user-images.githubusercontent.com/104793540/184921543-4b31c936-140f-4dd0-a6e0-c4afd2a879d8.png)
 
   </div>
+### Vagrantfile 
+
 
 ### Shell Provisioner
 Provisioner name: `"shell"`
@@ -210,7 +212,7 @@ Step 2 - Provisioning script with reverse proxy
  sudo apt-get upgrade -y
 ```
 
-- inside the app vm 
+Part A - App VM 
 ```
  cd app
  cd app
@@ -219,4 +221,10 @@ Step 2 - Provisioning script with reverse proxy
  npm start -y 
  ```
  
- Step 3
+ Part B - Db VM 
+ - what is the use of ENV Var DB_HOST according to developers 
+ 
+ and 
+ 
+ 
+ - how are you going to use it - which VM will need to have this created
