@@ -210,7 +210,14 @@ Step 2 - Provisioning script with reverse proxy
  sudo npm install pm2 -g
  sudo apt-get update -y
  sudo apt-get upgrade -y
+ 
+ # automate reverse proxy 
+ sudo cp -f app/rp_file/etc/nginx/sites-available/default
+ sudo systemctl restarst nginx 
 ```
+
+currently in home vagrant space 
+defualt file - keep everything but proxy line 
 
 Part A - App VM 
 ```
