@@ -108,7 +108,8 @@ end
 
 
 ```
- cd app 
+ cd app
+ cd app
  npm install express -y 
  npm install mongoose
  npm start -y 
@@ -162,15 +163,15 @@ Make sure you didn’t introduce any syntax errors by typing:
 
 ![image](https://user-images.githubusercontent.com/104793540/184921331-03857901-a0eb-467e-9cc6-26a5cd53a5ac.png)
   </div>
+  
 Step 1 - Vagrant file 
 - In the vagrant file two machines will be created called app abd db
 - the machines will be running in parrallel 
+
 ```ruby 
 # Ruby
-
 Vagrant.configure("2") do |config| 
 # creating a virtual machine ubuntu 
-# 
     config.vm.define "app" do |app| # creates vm app
         app.vm.box = "ubuntu/bionic64" # setting up linux os 
         app.vm.network "private_network",  ip: "192.168.10.100" # network setup for nginx web server for app machine 
@@ -183,5 +184,39 @@ Vagrant.configure("2") do |config|
         db.vm.network "private_network",  ip: "192.168.10.150" # network setup for nginx web server for db machine
     end 
 end 
-
 ```
+
+Step 2 - Provisioning script with reverse proxy 
+-  the provision command in the vargrant file [app.vm.provision "shell", path: "provision.sh]" finds the following .sh file which should be located in the same location of the root Vagrantfile for your project when  using path method
+
+```provision.sh 
+# updating and upgrading ubuntu 
+ sudo apt-get update -y 
+ sudo apt-get upgrade -y
+
+ # setting up nginx 
+ sudo apt-get install nginx -y
+ sudo systemctl start nginx 
+ sudo systemctl enable nginx 
+
+ # setting up nodejs 
+ sudo apt-get purge nodejs npm  
+ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+ sudo apt-get install -y nodejs  
+
+ # setting up npm 
+ sudo npm install pm2 -g
+ sudo apt-get update -y
+ sudo apt-get upgrade -y
+```
+
+- inside the app vm 
+```
+ cd app
+ cd app
+ npm install express -y 
+ npm install mongoose
+ npm start -y 
+ ```
+ 
+ Step 3
