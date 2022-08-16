@@ -102,8 +102,9 @@ end
 
 ```
  cd app 
- sudo npm install pm2 -y
+ npm install pm2  -g -y 
  npm install express -y 
+ npm install mongoose
  npm start -y 
  ```
  
@@ -115,3 +116,18 @@ end
 ![3](https://user-images.githubusercontent.com/104793540/184834077-8df26c13-678c-4be8-982c-7393b3351587.PNG)
 
  ![image](https://user-images.githubusercontent.com/104793540/184833959-ff9d5fc8-b812-4838-bd8e-eb1da6e9b69e.png)
+
+
+`sudo apt-get update && sudo apt-get install yarn` 
+`nohup node app.js > /dev/null 2>&1 &`
+use this command to run node app in the background 
+
+`export` command `export Last_Name`
+check spec Env var `printenv Last_Name`
+`echo $Name`
+
+
+#### how to make Env Variable `PERSISTENT`
+- research how to make env persistent of your first_name, last_name, `DB_HOST=mongodb://192.168.10.150:27017/posts`
+`ls -a`
+`sudo nano .bashrc` #add var you want to keep here 
