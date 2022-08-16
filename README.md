@@ -98,3 +98,12 @@ end
   </div>
 
 - taking npm out of script 
+
+
+```
+ cd app 
+ sudo npm install pm2 -y
+ npm install express -y 
+ npm start -y 
+
+ ```
