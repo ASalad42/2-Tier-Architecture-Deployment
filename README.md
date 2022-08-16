@@ -66,7 +66,8 @@ end
 
 ```
 # updating and upgrading ubuntu 
- sudo apt-get update && sudo apt-get upgrade -y
+ sudo apt-get update -y
+ sudo apt-get upgrade -y
 
  # setting up nginx 
  sudo apt-get install nginx 
@@ -78,9 +79,14 @@ end
  curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
  sudo apt-get install -y nodejs
 
+ # setting up npm 
+ sudo npm install pm2 -g
+ sudo apt-get update -y
+ sudo apt-get upgrade -y
+
  # setting up npm (inside app folder where you have app.js)
  cd app
- sudo npm install pm2 -y
+ cd app
  npm install express -y 
  npm start -y 
 
@@ -102,7 +108,6 @@ end
 
 ```
  cd app 
- npm install pm2  -g -y 
  npm install express -y 
  npm install mongoose
  npm start -y 
@@ -131,3 +136,47 @@ check spec Env var `printenv Last_Name`
 - research how to make env persistent of your first_name, last_name, `DB_HOST=mongodb://192.168.10.150:27017/posts`
 `ls -a`
 `sudo nano .bashrc` #add var you want to keep here 
+
+### Setting Up Nginx as a Reverse Proxy Server
+Now that your application is running, and listening on localhost, you need to set up a way for your users to access it. We will set up the Nginx web server as a reverse proxy for this purpose.
+
+steps:
+- in vagrant home `cd /etc `
+- `ls `
+- `cd nginx `
+- `cd sites-available `
+- `sudo nano default`
+- inside the server block you should have an existing location / block. Replace the contents of that block with the following configuration. 
+`location / {
+      proxy_pass http://localhost:8080;`
+- If your application is set to listen on a different port, update the litsening port to the correct port number i.e 3000
+- Once you are done adding the location blocks for your applications, save and exit.
+Make sure you didn’t introduce any syntax errors by typing:
+- `sudo nginx -t `
+- Restart Nginx with `sudo systemctl restart nginx`
+
+
+### Multi-Machine 
+Step 1 - Vagrant file 
+- In the vagrant file two machines will be created called app abd db
+- the machines will be running in parrallel 
+```ruby 
+# Ruby
+
+Vagrant.configure("2") do |config| 
+# creating a virtual machine ubuntu 
+# 
+    config.vm.define "app" do |app| # creates vm app
+        app.vm.box = "ubuntu/bionic64" # setting up linux os 
+        app.vm.network "private_network",  ip: "192.168.10.100" # network setup for nginx web server for app machine 
+        app.vm.synced_folder ".", "/home/vagrant/app" # sync data from local host 
+        app.vm.provision "shell", path: "provision.sh" # shell provisioner for script and location path 
+    end
+
+    config.vm.define "db" do |db| # creates vm db
+        db.vm.box = "ubuntu/bionic64" # setting up linux os 
+        db.vm.network "private_network",  ip: "192.168.10.150" # network setup for nginx web server for db machine
+    end 
+end 
+
+```
