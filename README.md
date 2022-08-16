@@ -9,7 +9,8 @@
 
 <div align="center">
 
-![image](https://user-images.githubusercontent.com/104793540/184662301-6b35e0b3-bdd6-4bf9-a501-b956b4c4a22b.png)
+![image](https://user-images.githubusercontent.com/104793540/184921543-4b31c936-140f-4dd0-a6e0-c4afd2a879d8.png)
+
   </div>
 
 ### Shell Provisioner
@@ -157,6 +158,10 @@ Make sure you didn’t introduce any syntax errors by typing:
 
 
 ### Multi-Machine 
+<div align="center">
+
+![image](https://user-images.githubusercontent.com/104793540/184921331-03857901-a0eb-467e-9cc6-26a5cd53a5ac.png)
+  </div>
 Step 1 - Vagrant file 
 - In the vagrant file two machines will be created called app abd db
 - the machines will be running in parrallel 
