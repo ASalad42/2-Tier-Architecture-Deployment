@@ -105,5 +105,13 @@ end
  sudo npm install pm2 -y
  npm install express -y 
  npm start -y 
-
  ```
+ 
+ ![2](https://user-images.githubusercontent.com/104793540/184834037-ca125a05-de9a-4c41-a872-c59d82e709c8.PNG)
+ 
+ ![1](https://user-images.githubusercontent.com/104793540/184833993-99257cae-e65c-4185-899e-cb064dd938e2.PNG)
+
+
+![3](https://user-images.githubusercontent.com/104793540/184834077-8df26c13-678c-4be8-982c-7393b3351587.PNG)
+
+ ![image](https://user-images.githubusercontent.com/104793540/184833959-ff9d5fc8-b812-4838-bd8e-eb1da6e9b69e.png)
