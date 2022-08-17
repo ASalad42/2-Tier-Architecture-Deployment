@@ -237,6 +237,7 @@ server {
 ```
 ![image](https://user-images.githubusercontent.com/104793540/185058506-6282e0a0-2efe-4f03-9759-c9abca7083d1.png)
 
+![image](https://user-images.githubusercontent.com/104793540/185059257-b03c4da8-8879-4d6a-a21c-97c290236eb4.png)
 
  
  Step 3 - Db VM 
@@ -252,4 +253,8 @@ server {
  - `ls -a`
  - `sudo nano .bashrc`
  - `DB_HOST=mongodb://192.168.10.150:27017/post`
+
+![image](https://user-images.githubusercontent.com/104793540/185060040-3707ff7d-470c-42b1-8d60-bbdd0f6c55c1.png)
+
+![image](https://user-images.githubusercontent.com/104793540/185060219-f51c6b07-288a-44c2-ab01-c83f66b54748.png)
 
