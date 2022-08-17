@@ -216,8 +216,25 @@ Step 2 - Provisioning script with reverse proxy
  sudo systemctl restarst nginx 
 ```
 
-currently in home vagrant space 
-defualt file - keep everything but proxy line 
+Automating script 
+
+The reverse proxy can be automated by creating a new file with code we used earlier manually. Choose file location (i.e where app.js file is) 
+- navigate to directory in app/app 
+- `sudo nano rp_file`
+- paste reverse proxy configuration here as shown below 
+```
+server {
+        listen 80;
+        listen [::]:80;
+
+        access_log /var/log/nginx/reverse-access.log;
+        error_log /var/log/nginx/reverse-error.log;
+
+        location / {
+                    proxy_pass http://localhost:3000;
+  }
+}
+```
 
 Part A - App VM 
 ```
@@ -229,9 +246,12 @@ Part A - App VM
  ```
  
  Part B - Db VM 
- - what is the use of ENV Var DB_HOST according to developers 
- 
- and 
- 
- 
- - how are you going to use it - which VM will need to have this created
+ what is the use of ENV Var DB_HOST according to developers and how are you going to use it - which VM will need to have this created
+ - As shown in the multi machine diagram above, the DB_HOST env variable is needed for the two virtual machines to commnuicate 
+ - Such a varible can be set in the DB vim permenantly by following the guide in the link below. 
+ - https://phoenixnap.com/kb/linux-set-environment-variable
+ - The variable must be writte in the .bashrc file in the home vagrant fodler 
+ - `ls -a`
+ - `sudo nano .bashrc`
+ - `DB_HOST=mongodb://192.168.10.150:27017/post`
+
