@@ -300,6 +300,8 @@ need to tell mongodb you will receieve ip from app please allow
 `npm start`
 Refresh browser - Open browser app-ip/posts or ip:3000/posts 
 
+note > Save and exit the file. The changes are applied after you restart the shell. If you want to apply the changes during the current session, use the source command:
+`source ~/.bashrc`
 
 only manual things should be 
 vagrant up ssh app

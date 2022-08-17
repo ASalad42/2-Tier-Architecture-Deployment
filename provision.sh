@@ -19,7 +19,19 @@
  sudo apt-get update -y
  sudo apt-get upgrade -y
 
- # automate reverse proxy 
+ # automate reverse proxy and mongod
  sudo cp -f app/app/rp_file /etc/nginx/sites-available/default
  sudo systemctl restart nginx 
  sudo systemctl enable nginx 
+
+
+ sudo echo "export DB_HOST=mongodb://192.168.10.150:27017/posts" >> /etc/bash.bashrc
+ source /etc/bash.bashrc
+ #explain 
+
+ cd app
+ cd app
+ cd seeds
+ node seed.js
+ cd ..
+ npm start -d 
