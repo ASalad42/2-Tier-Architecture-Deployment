@@ -188,7 +188,7 @@ Vagrant.configure("2") do |config|
 end 
 ```
 
-Step 2 - Provisioning script with reverse proxy 
+Step 2 - Provisioning script with reverse proxy - App VM 
 -  the provision command in the vargrant file [app.vm.provision "shell", path: "provision.sh]" finds the following .sh file which should be located in the same location of the root Vagrantfile for your project when  using path method
 
 ```provision.sh 
@@ -235,21 +235,19 @@ server {
   }
 }
 ```
+![image](https://user-images.githubusercontent.com/104793540/185058506-6282e0a0-2efe-4f03-9759-c9abca7083d1.png)
 
-Part A - App VM 
-```
- cd app
- cd app
- npm install express -y 
- npm install mongoose
- npm start -y 
- ```
+
  
- Part B - Db VM 
+ Step 3 - Db VM 
+ 
  what is the use of ENV Var DB_HOST according to developers and how are you going to use it - which VM will need to have this created
  - As shown in the multi machine diagram above, the DB_HOST env variable is needed for the two virtual machines to commnuicate 
  - Such a varible can be set in the DB vim permenantly by following the guide in the link below. 
  - https://phoenixnap.com/kb/linux-set-environment-variable
+ 
+ ![image](https://user-images.githubusercontent.com/104793540/185058691-dfe93b13-daa2-4d5f-838b-77b3717370b9.png)
+
  - The variable must be writte in the .bashrc file in the home vagrant fodler 
  - `ls -a`
  - `sudo nano .bashrc`
