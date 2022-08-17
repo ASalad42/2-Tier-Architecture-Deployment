@@ -256,7 +256,7 @@ server {
  - The variable must be writte in the .bashrc file in the home vagrant fodler 
  - `ls -a`
  - `sudo nano .bashrc`
- - `DB_HOST=mongodb://192.168.10.150:27017/post`
+ - `DB_HOST=mongodb://192.168.10.150:27017/posts`
  
 The variable is needed only in the app vm because it has the ip for the db machine so app knows where to try to connect.
 
@@ -264,5 +264,44 @@ The variable is needed only in the app vm because it has the ip for the db machi
 ![image](https://user-images.githubusercontent.com/104793540/185060219-f51c6b07-288a-44c2-ab01-c83f66b54748.png)
 
 ### DB_HOST
-- a
-- b
+- steps on diagram
+1 install mongodb (required version) & 2 required dependencies 
+### required key 
+- `sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927`
+- `echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list`
+- sudo update and upgrade 
+### range of versions 
+- `sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20`
+- `sudo systemctl restart mongod` & `sudo systemctl enable mongod`
+- `sudo systemctl status mongod`
+
+3 edit mongodb file cd/etc/mongod.conf
+`cd /etc`
+`sudo nano  mongod.conf`
+go to network interfaces change to 0.0.0.0 - cant do this in production 
+
+need to tell mongodb you will receieve ip from app please allow 
+
+4 allow app to connect to DB
+5 Restart db then enable (systemctl…)
+`sudo systemctl restart mongod`
+`sudo systemctl enable  mongod`
+`sudo systemctl status  mongod`
+
+6 go back to app machine and relaunch app 
+`export DB_HOST=mongodb://192.168.10.150:27017/posts`
+`printenv DB_HOST`  
+`cd app`
+`cd app`
+`npm start`
+`cd seeds`
+`node seed.js`
+`cd ..`
+`npm start`
+Refresh browser - Open browser app-ip/posts or ip:3000/posts 
+
+
+only manual things should be 
+vagrant up ssh app
+cd app/app
+npm start
