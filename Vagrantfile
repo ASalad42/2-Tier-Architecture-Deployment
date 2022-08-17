@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
         db.vm.network "private_network",  ip: "192.168.10.150" # network setup for nginx web server for db machine
         db.vm.provision "shell", path: "provisiondb.sh"
     end 
+
     config.vm.define "app" do |app| # creates vm app
         app.vm.box = "ubuntu/bionic64" # setting up linux os 
         app.vm.network "private_network",  ip: "192.168.10.100" # network setup for nginx web server for app machine 

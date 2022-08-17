@@ -31,7 +31,8 @@
 
  cd app
  cd app
+ npm install 
  cd seeds
  node seed.js
  cd ..
- npm start -d 
+ npm start -d # detached, still have control of the terminal 
