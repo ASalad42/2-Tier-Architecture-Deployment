@@ -262,3 +262,6 @@ server {
 
 ![image](https://user-images.githubusercontent.com/104793540/185060219-f51c6b07-288a-44c2-ab01-c83f66b54748.png)
 
+### DB_HOST
+- a
+- b

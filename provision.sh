@@ -20,5 +20,6 @@
  sudo apt-get upgrade -y
 
  # automate reverse proxy 
- sudo cp -f app/app/rp_file/etc/nginx/sites-available/default
- sudo systemctl restarst nginx 
+ sudo cp -f app/app/rp_file /etc/nginx/sites-available/default
+ sudo systemctl restart nginx 
+ sudo systemctl enable nginx 
