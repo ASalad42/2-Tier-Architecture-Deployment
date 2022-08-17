@@ -244,11 +244,11 @@ server {
 ![image](https://user-images.githubusercontent.com/104793540/185059257-b03c4da8-8879-4d6a-a21c-97c290236eb4.png)
 
  
- Step 3 - Db VM 
+ Step 3 - ENV Var DB_HOST
  
  what is the use of ENV Var DB_HOST according to developers and how are you going to use it - which VM will need to have this created
  - As shown in the multi machine diagram above, the DB_HOST env variable is needed for the two virtual machines to commnuicate 
- - Such a varible can be set in the DB vim permenantly by following the guide in the link below. 
+ - Such a varible can be set in the App vim permenantly by following the guide in the link below. 
  - https://phoenixnap.com/kb/linux-set-environment-variable
  
  ![image](https://user-images.githubusercontent.com/104793540/185058691-dfe93b13-daa2-4d5f-838b-77b3717370b9.png)
@@ -257,8 +257,9 @@ server {
  - `ls -a`
  - `sudo nano .bashrc`
  - `DB_HOST=mongodb://192.168.10.150:27017/post`
+ 
+The variable is needed only in the app vm because it has the ip for the db machine so app knows where to try to connect.
 
-![image](https://user-images.githubusercontent.com/104793540/185060040-3707ff7d-470c-42b1-8d60-bbdd0f6c55c1.png)
 
 ![image](https://user-images.githubusercontent.com/104793540/185060219-f51c6b07-288a-44c2-ab01-c83f66b54748.png)
 
