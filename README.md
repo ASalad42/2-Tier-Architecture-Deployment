@@ -222,6 +222,10 @@ The reverse proxy can be automated by creating a new file with code we used earl
 - navigate to directory in app/app 
 - `sudo nano rp_file`
 - paste reverse proxy configuration here as shown below 
+
+![image](https://user-images.githubusercontent.com/104793540/185062832-d0b140d3-e627-4ba2-876e-2f3fd00e6704.png)
+
+
 ```
 server {
         listen 80;
