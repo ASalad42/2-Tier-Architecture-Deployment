@@ -163,7 +163,7 @@ Make sure you didn’t introduce any syntax errors by typing:
 ### Multi-Machine 
 <div align="center">
 
-![image](https://user-images.githubusercontent.com/104793540/184921331-03857901-a0eb-467e-9cc6-26a5cd53a5ac.png)
+![image](https://user-images.githubusercontent.com/104793540/185354843-97632152-e9b2-488e-9489-a4b17becce0f.png)
   </div>
   
 Step 1 - Vagrant file 
