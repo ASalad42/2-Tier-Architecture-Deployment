@@ -25,13 +25,15 @@
  sudo systemctl enable nginx 
 
 
- sudo echo "export DB_HOST=mongodb://192.168.10.150:27017/posts" >> /etc/bash.bashrc
- source /etc/bash.bashrc
- #explain 
+ sudo echo "export DB_HOST=mongodb://192.168.10.150:27017/posts" >> /etc/.bashrc # print(echo) the dbhost connecttion into the .bashrc file 
+ source /etc/.bashrc # use this source command if you want to apply the changes during the current session
+ 
+#To set permanent environment variables for all users, create an .sh file in the /etc/profile.d folder: `sudo nano /etc/profile.d/[filename].sh`?????
+
 
  cd app
  cd app
- npm install 
+ sudo apt-get install npm -y # solution on stackoverflow 
  cd seeds
  node seed.js
  cd ..

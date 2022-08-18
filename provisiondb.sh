@@ -7,11 +7,12 @@
  sudo systemctl restart mongod
  sudo systemctl enable  mongod
  sudo systemctl status  mongod
- 
- sudo rm /etc/mongod.conf
- # explain
- sudo cp -f mongod.conf /etc/mongod.conf #uses current working directory 
- # explain 
+
+ # sudo rm /etc/mongod.conf
+ # removes existing mongod.conf file 
+ sudo cp -f mongod.conf /etc/mongod.conf #uses current working directory - doesnt, had to add deployment, then removed - confused!
+ # C:\Users\Ayan\deployment\mongod.conf
+ # force replaces 
  #sudo cp -f C:\Users\Ayan\deployment\app\mongod.conf /etc/mongod.conf
 
  

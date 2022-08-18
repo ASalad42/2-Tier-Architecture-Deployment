@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
     config.vm.define "db" do |db| # creates vm db
         db.vm.box = "ubuntu/bionic64" # setting up linux os 
         db.vm.network "private_network",  ip: "192.168.10.150" # network setup for nginx web server for db machine
-        db.vm.provision "shell", path: "provisiondb.sh"
+        db.vm.provision "shell", path: "provisiondb.sh" #initially tried file path when file was else where, now using current directoy where vagrantfile is 
     end 
 
     config.vm.define "app" do |app| # creates vm app
