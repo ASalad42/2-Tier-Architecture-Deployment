@@ -30,11 +30,14 @@
  
 #To set permanent environment variables for all users, create an .sh file in the /etc/profile.d folder: `sudo nano /etc/profile.d/[filename].sh`?????
 
-
+ 
  cd app
  cd app
  sudo apt-get install npm -y # solution on stackoverflow 
+ npm install express -y
+ npm install mongoose -y
  cd seeds
  node seed.js
  cd ..
+ npm install
  npm start -d # detached, still have control of the terminal 
