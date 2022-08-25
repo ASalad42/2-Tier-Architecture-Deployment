@@ -26,8 +26,8 @@
  sudo systemctl enable nginx 
 
 
-# sudo echo "export DB_HOST=mongodb://192.168.10.150:27017/posts" >> /etc/.bashrc # print(echo) the dbhost connecttion into the .bashrc file 
-# source /etc/.bashrc # use this source command if you want to apply the changes during the current session
+ sudo echo "export DB_HOST=mongodb://192.168.10.150:27017/posts" >> /etc/.bashrc # print(echo) the dbhost connecttion into the .bashrc file 
+ source /etc/.bashrc # use this source command if you want to apply the changes during the current session
  
 #To set permanent environment variables for all users, create an .sh file in the /etc/profile.d folder: `sudo nano /etc/profile.d/[filename].sh`?????
 
@@ -37,8 +37,8 @@
  sudo apt-get install npm -y # solution on stackoverflow 
  npm install express -y
  npm install mongoose -y
- #cd seeds
- #node seed.js
- #cd ..
-# npm install
- #npm start -d # detached, still have control of the terminal 
+ cd seeds
+ node seed.js
+ cd ..
+ npm install
+ npm start -d # detached, still have control of the terminal 
